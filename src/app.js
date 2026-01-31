@@ -2,7 +2,7 @@ import express from "express";
 import morgan from "morgan";
 import cors from "cors";
 
-const app=express();
+const app = express();
 
 //middlewares
 app.use(cors());
@@ -10,9 +10,13 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 
+import routes from "./routes.js";
+
 //health check
-app.get("/health",(req,res)=>{
-    res.json({status:"OK",time:new Date()});
+app.get("/health", (req, res) => {
+    res.json({ status: "OK", time: new Date() });
 });
+
+app.use("/api", routes);
 
 export default app;

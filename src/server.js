@@ -1,8 +1,8 @@
 import app from "./app.js";
 import {env} from "./config/env.js";
 import {connectDB} from "./config/db.js";
-import { Restaurant } from "./models/restaurant/restaurant.model.js";
-import { Table } from "./models/table/table.model.js";
+import { Restaurant } from "./modules/restaurant/restaurant.model.js";
+import { Table } from "./modules/table/table.model.js";
 
 console.log("Models loaded:", Restaurant.modelName, Table.modelName);
 
